@@ -27,12 +27,13 @@ Este repositório contém o **pipeline completo** desenvolvido como projeto fina
 
 ```
 credit_scoring_project/
-├── data/                         # Dados brutos (.csv) e dados de teste (.csv)
+├── data/                         # Dados brutos (.csv) e dados de teste gerado (.csv)
 ├── model/                        # Modelos serializados (.joblib)
 ├── src/
 │   ├── pipeline.py               # Build e treino do pipeline
 │   └── predict.py                # Funções para carregar o modelo e gerar predições
-├── output/                       # Saídas do predict.py 
+├── output/                       # Exemplo de saídas do predict.py
+├── test/                         # Função para gerar uma base de teste dirivada da original 
 ├── Exploração & Modelagem.ipynb  # Notebook Jupyter com a modelagem feita
 ├── requirements.txt              # Dependências Python
 └── README.md
@@ -152,6 +153,8 @@ else:
 - ROC-AUC: 100.00%
 
 As três variáveis mais relevantes para o modelo são `feat_8`, `feat_17` e `feat_50`. Recomenda-se priorizar esses atributos tanto na etapa de treinamento quanto na análise dos perfis de clientes. É fundamental considerá-las tanto no treinamento quanto na análise dos clientes.
+
+Na pasta `output` há um exemplo de saída das previsões do modelo com uma base de dados sintética gerada pela função `gerar_dados_sinteticos_para_testes.py` para simular novos dados a partir das informações da base `data/dados.csv`. Essa base gerada pode ser consultada em `data/test_data_for_inference.csv`.
 
 ---
 
