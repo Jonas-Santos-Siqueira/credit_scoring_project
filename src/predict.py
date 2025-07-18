@@ -71,7 +71,7 @@ def predict(df: pd.DataFrame, model_path: str = 'knn_pipeline.joblib') -> pd.Dat
     return df
 
 if __name__ == '__main__':
-    # Espera: python predict.py <data/dados.csv> <output/result_output.csv>
+    # Espera: python predict.py <data/test_data_for_inference.csv> <output/result_output.csv>
     input_path = sys.argv[1]
     output_path = sys.argv[2]
 
