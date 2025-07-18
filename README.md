@@ -1,9 +1,9 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.11-blue.svg" alt="Python"/>
-  <img src="https://img.shields.io/badge/joblib-1.4.2-white.svg" alt="joblib 1.4.2"/>
-  <img src="https://img.shields.io/badge/numpy-2.3.1-blue.svg" alt="numpy 2.3.1"/>
   <img src="https://img.shields.io/badge/pandas-2.3.1-darkblue.svg" alt="pandas 2.3.1"/>
+  <img src="https://img.shields.io/badge/numpy-2.3.1-blue.svg" alt="numpy 2.3.1"/>
   <img src="https://img.shields.io/badge/scikit--learn-1.4.2-darkorange.svg" alt="scikit‑learn 1.4.2"/>
+  <img src="https://img.shields.io/badge/joblib-1.4.2-white.svg" alt="joblib 1.4.2"/>
 </p>
 
 # Credit Scoring Pipeline
