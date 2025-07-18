@@ -26,13 +26,13 @@ class HighCorrFilter(BaseEstimator, TransformerMixin):
         # 3. Remove colunas de alta correlação com o alvo:
         return X.drop(columns=self.drop_cols_, errors='ignore')
 
-def load_model(model_path: str = 'knn_pipeline.joblib'):
+def load_model(model_path: str = 'model/knn_pipeline.joblib'):
     """
     Carrega e retorna o pipeline treinado salvo em disco.
     """
     return joblib.load(model_path)
 
-def predict(df: pd.DataFrame, model_path: str = 'knn_pipeline.joblib') -> pd.DataFrame:
+def predict(df: pd.DataFrame, model_path: str = 'model/knn_pipeline.joblib') -> pd.DataFrame:
     """
     Recebe um DataFrame com as mesmas colunas originais (todas feats) e retorna a base completa,
     acrescida das colunas:
@@ -69,13 +69,3 @@ def predict(df: pd.DataFrame, model_path: str = 'knn_pipeline.joblib') -> pd.Dat
     df['score'] = ((1 - proba.astype(float)) * 1000).astype(int)
     df['class_score'] = df['score'].apply(classificar_score)
     return df
-
-if __name__ == '__main__':
-    # Espera: python predict.py <data/test_data_for_inference.csv> <output/result_output.csv>
-    input_path = sys.argv[1]
-    output_path = sys.argv[2]
-
-    data = pd.read_csv(input_path)
-    results = predict(data)
-    results.to_csv(output_path, index=False)
-    print(f"Predições salvas em {output_path}")
