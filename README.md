@@ -28,10 +28,11 @@ Este repositório contém o **pipeline completo** desenvolvido como projeto fina
 ```
 credit_scoring_project/
 ├── data/                         # Dados brutos (.csv) e dados de teste (.csv)
-├── models/                       # Modelos serializados (.joblib)
+├── model/                        # Modelos serializados (.joblib)
 ├── src/
 │   ├── pipeline.py               # Build e treino do pipeline
 │   └── predict.py                # Funções para carregar o modelo e gerar predições
+├── output/                       # Saídas do predict.py 
 ├── Exploração & Modelagem.ipynb  # Notebook Jupyter com a modelagem feita
 ├── requirements.txt              # Dependências Python
 └── README.md
