@@ -97,12 +97,16 @@ df_out.to_csv('predictions.csv', index=False)
 
 O DataFrame retornado contém as colunas originais mais as seguintes colunas adicionais:
 
-- `class_pred`: previsão da classe (0 ou 1)
-- `prob`: probabilidade da classe positiva em porcentagem (valor de 0.00 a 100.00 com duas casas decimais)
-- `score`: score de crédito calculado de 0 a 1000 (quanto menor, maior o risco)
+- `class_pred`: previsão da classe (0 ou 1);
+- `prob`: probabilidade da classe positiva em porcentagem (valor de 0.00 a 100.00 com duas casas decimais);
+- `score`: score de crédito que varia de 0 a 1000 (quanto menor, maior o risco), calculado como:
+
+  score = (1 - prob) × 1000,
+
+  onde `prob` é a probabilidade prevista de inadimplência (entre 0 e 1).
 - `class_score`: faixa de risco associada ao score (`Risco muito baixo`, `Risco baixo`, `Risco médio`, `Risco alto` ou `Risco muito alto`)
 
-Esta classificação de `score` segue o padrão de risco utilizado pela Serasa — conforme os limites abaixo — e pode ser facilmente adaptada para refletir qualquer outra política de crédito definida pela empresa. Assim, segue a classificação do score seguindo o padrão de risco utilizado pela Serasa:
+Esta classificação de `score` segue o padrão de risco utilizado pela Serasa — conforme os limites abaixo — e pode ser facilmente adaptada para refletir qualquer outra política de crédito definida pela empresa:
 
 ```
 if score >= 901:
